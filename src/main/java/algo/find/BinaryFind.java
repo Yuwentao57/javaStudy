@@ -1,4 +1,4 @@
-package algo.look;
+package algo.find;
 
 public class BinaryFind {
     /**

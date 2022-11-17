@@ -1,5 +1,7 @@
 public class Test {
     public static void main(String[] args) {
-        System.out.println(1);
+        boolean a = true;
+        if (a) System.out.println("hello");
+        if (a == true) System.out.println("nihao");
     }
 }

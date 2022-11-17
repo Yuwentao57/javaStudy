@@ -13,9 +13,7 @@ class Solution89 {
     public int rob(int[] nums) {
         int len = nums.length;
         int preNO = 0, preYes = 0, tNo = 0, tYes = 0;
-        preNO = 0;
-        preYes = nums[0];
-        for (int i = 1; i < len; i++) {
+        for (int i = 0; i < len; i++) {
             tNo = Math.max(preNO, preYes);
             tYes = nums[i] + preNO;
             preNO = tNo;

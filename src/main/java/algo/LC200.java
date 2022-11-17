@@ -9,9 +9,10 @@ public class LC200 {
                 {'0', '0', '0', '0', '0'}};
 
         char[][] b = {
-                {'1', '0', '1', '1', '1'},
-                {'1', '0', '1', '0', '1'},
-                {'1', '1', '1', '0', '1'}};
+//                {'0', '0', '0', '0', '1'},
+                {'0', '0', '0', '0', '1'},
+                {'0', '0', '0', '0', '1'},
+                {'1', '1', '1', '1', '1'}};
         Solution200 solution200 = new Solution200();
         System.out.println(solution200.numIslands(b));
     }
@@ -40,16 +41,16 @@ class Solution200 {
                 if (grid[i][j] == '0') continue;
                 if (grid[i][j] == '1') {
                     if (i > 0 && grid[i - 1][j] == '1') {
-                        unionNode(unionset, (i - 1) * col + j, i * col + j);
+                        unionNode(unionset, i * col + j, (i - 1) * col + j);
                     }
                     if (j < col - 1 && grid[i][j + 1] == '1') {
-                        unionNode(unionset, i * col + j + 1, i * col + j);
+                        unionNode(unionset, i * col + j, i * col + j + 1);
                     }
                     if (i < row - 1 && grid[i + 1][j] == '1') {
-                        unionNode(unionset, (i + 1) * col + j, i * col + j);
+                        unionNode(unionset, i * col + j, (i + 1) * col + j);
                     }
                     if (j > 0 && grid[i][j - 1] == '1') {
-                        unionNode(unionset, i * col + j - 1, i * col + j);
+                        unionNode(unionset, i * col + j, i * col + j - 1);
                     }
                 }
             }
