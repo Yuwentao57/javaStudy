@@ -2,20 +2,9 @@ import com.sun.net.ssl.internal.www.protocol.https.Handler;
 
 public class Test {
     public static void main(String[] args) {
-        boolean a = true;
-        if (a) System.out.println("hello");
-        if (a == true) System.out.println("nihao");
-
-
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        });
-
-    }
-
-    void show() {
+        int a = 8 << 2;
+        int b = 8 >> 2;
+        System.out.println(a);
+        System.out.println(b);
     }
 }

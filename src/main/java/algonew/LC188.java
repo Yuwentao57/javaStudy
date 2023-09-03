@@ -24,6 +24,7 @@ public class LC188 {
             for (int i = 1; i < nums; i++) {
                 mp[i][0][1] = Math.max(mp[i - 1][0][1], mp[i - 1][0][0] - prices[i]);
                 for (int cnt = 1; cnt <= k; cnt++) {
+                    //注意mp[i - 1][cnt][0] - prices[i]是cnt，不是cnt- 1，一次交易（买和卖）
                     mp[i][cnt][1] = Math.max(mp[i - 1][cnt][1], mp[i - 1][cnt][0] - prices[i]);
                     mp[i][cnt][0] = Math.max(mp[i - 1][cnt][0], mp[i - 1][cnt - 1][1] + prices[i]);
                 }
