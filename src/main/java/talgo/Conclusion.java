@@ -23,6 +23,20 @@ public class Conclusion {
         return max_bit;
     }
 
+    /**
+     * (n - 1) & n 将n最右侧的 1 变成 0
+     * @param num
+     * @return
+     */
+    int numberOf1(int num){
+        int ans = 0;
+        while (num != 0) {
+            ans += 1;
+            num = (num - 1) & num;
+        }
+        return ans;
+    }
+
     static class Solution {
 
     }
